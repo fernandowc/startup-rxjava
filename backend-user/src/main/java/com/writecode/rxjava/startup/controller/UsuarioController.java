@@ -2,61 +2,85 @@ package com.writecode.rxjava.startup.controller;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+import com.writecode.rxjava.startup.dto.FiltroDTO;
+import com.writecode.rxjava.startup.dto.UsuarioResponse;
 import com.writecode.rxjava.startup.model.Usuario;
 import com.writecode.rxjava.startup.service.usuario.UsuarioService;
-import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.core.Maybe;
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Single;
+import com.writecode.rxjava.startup.service.usuario.UsuarioServiceImpl;
+import com.writecode.rxjava.startup.util.Exception.ApiExceptionEnum;
+import com.writecode.rxjava.startup.util.Exception.exception.ApiRequestException;
+import com.writecode.rxjava.startup.util.mapper.EntityDtoConverter;
+import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import net.minidev.json.JSONObject;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.Links;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
-import java.nio.file.Files;
-import java.util.Map;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+import static reactor.function.TupleUtils.function;
 
 @RestController
 @RequestMapping(value = "/api/usuarios")
 public class UsuarioController {
 
+    final static Logger log = Logger.getLogger(UsuarioServiceImpl.class);
+
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private EntityDtoConverter converter;
 
-    @GetMapping(produces = "application/stream+json")
-    public Single<ResponseEntity<Flowable<Usuario>>> listar()
+
+    @GetMapping(produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public Single<ResponseEntity<Flowable<UsuarioResponse>>> listar()
     {
         Flowable<Usuario> fxUsuarios = usuarioService.listar();
         return Single.just(ResponseEntity
                 .ok()
-                .body(fxUsuarios));
+                .body(converter.convert(fxUsuarios)));
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Single<ResponseEntity<Usuario>> nuevo(@RequestBody Usuario usuario)
+    @PostMapping
+    public Single<ResponseEntity<Usuario>> nuevo(@Valid @RequestBody Usuario usuario)
     {
+//        return usuarioService.registrar(usuario)
+//                .subscribeOn(Schedulers.io())
+//                .map(p -> ResponseEntity.created(URI.create("/"+ p.getId()))
+//                .body(usuario));
+
         return usuarioService.registrar(usuario)
-                .subscribeOn(Schedulers.io())
                 .map(p -> ResponseEntity.created(URI.create("/"+ p.getId()))
-                .body(usuario));
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .body(usuario));
+
 
     }
 
     @GetMapping("/{id}")
-    public Maybe<ResponseEntity<Usuario>> listarPorId(@PathVariable("id") String id)
+    public Single<ResponseEntity<Usuario>> listarPorId(@PathVariable("id") String id)
     {
+
         return usuarioService.listarPorId(id)
-                .subscribeOn(Schedulers.io())
                 .map(p -> ResponseEntity.ok()
-                .body(p));
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .body(p))
+                .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @PutMapping("{id}")
@@ -76,6 +100,47 @@ public class UsuarioController {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(p));
     }
+
+    @DeleteMapping("{id}")
+    public Single<ResponseEntity<Void>> eliminarUsuario(@PathVariable("id") String id) {
+
+        return usuarioService.eliminarById(id).subscribeOn(Schedulers.io())
+                .toSingle(() -> new ResponseEntity<>(HttpStatus.OK));
+    }
+
+    @PostMapping("/buscar")
+    public Single<ResponseEntity<Flowable<Usuario>>> buscar(@RequestBody FiltroDTO filtro) {
+
+        Flowable<Usuario> flwUsuarios = usuarioService.obtenerUsuarioPorFiltro(filtro);
+
+        return Single.just(ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(flwUsuarios));
+
+    }
+
+    @GetMapping("/generarReporte/{id}")
+    public Single<ResponseEntity<byte[]>> generarReporte(@PathVariable("id") String id) {
+
+        Maybe<byte[]> reporte = usuarioService.generarReporte(id);
+
+        return reporte.map(bytes -> ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(bytes))
+                .defaultIfEmpty(new ResponseEntity<byte[]>(HttpStatus.NO_CONTENT));
+    }
+
+    @GetMapping("/hateoas/{id}")
+    public Single<EntityModel<Usuario>> listarHateoasPorId(@PathVariable("id") String id) {
+
+        Single<Link> link1 = Single.just(linkTo(methodOn(UsuarioController.class).listarPorId(id)).withSelfRel());
+
+        //practica IDEAL
+        return usuarioService.listarPorId(id).toSingle()
+                .zipWith(link1, EntityModel::of);
+    }
+
+
 
 //    @PostMapping("/subir/{id}")
 //    public Single<ResponseEntity<Usuario>> subirFoto(@PathVariable String id, @RequestPart FilePart file) throws IOException
@@ -104,5 +169,7 @@ public class UsuarioController {
 //                        .defaultIfEmpty(ResponseEntity.notFound().build())
 //                );
 //    }
+
+
 
 }

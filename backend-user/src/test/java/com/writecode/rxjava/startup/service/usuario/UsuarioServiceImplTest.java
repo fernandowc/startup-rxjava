@@ -25,6 +25,6 @@ class UsuarioServiceImplTest {
     @Test
     void listarPorId() {
 
-        usuarioService.listarPorId("61273025a2056141c33317cb");
+
     }
 }

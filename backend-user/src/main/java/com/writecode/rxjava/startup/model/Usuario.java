@@ -10,9 +10,7 @@ import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @Document(collection = "usuarios")
-@AllArgsConstructor
 public class Usuario {
 
     @Id

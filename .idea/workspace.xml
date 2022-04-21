@@ -4,11 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9eb8d5a9-b4c5-4e26-b401-d346d308fd5e" name="Changes" comment="" />
+    <list default="true" id="9eb8d5a9-b4c5-4e26-b401-d346d308fd5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend-user/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/backend-usuario.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/backend-usuario.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/src/main/java/com/writecode/rxjava/startup/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/src/main/java/com/writecode/rxjava/startup/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/src/main/java/com/writecode/rxjava/startup/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/src/main/java/com/writecode/rxjava/startup/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/src/main/java/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/src/main/java/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/src/test/java/com/writecode/rxjava/startup/Datos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/src/test/java/com/writecode/rxjava/startup/StartupApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/src/test/java/com/writecode/rxjava/startup/StartupApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/src/test/java/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/src/test/java/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/target/classes/com/writecode/rxjava/startup/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/target/classes/com/writecode/rxjava/startup/controller/UsuarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/target/classes/com/writecode/rxjava/startup/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/target/classes/com/writecode/rxjava/startup/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/target/classes/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/target/classes/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/target/test-classes/com/writecode/rxjava/startup/Datos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/target/test-classes/com/writecode/rxjava/startup/StartupApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/target/test-classes/com/writecode/rxjava/startup/StartupApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-user/target/test-classes/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend-user/target/test-classes/com/writecode/rxjava/startup/service/usuario/UsuarioServiceImplTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1zWqiA6z0LZ5sZpPwfd4k70k8R7" />
   <component name="ProjectViewState">
@@ -43,6 +64,10 @@
       <workItem from="1636440925705" duration="53000" />
       <workItem from="1636440991703" duration="18000" />
       <workItem from="1636746463070" duration="151000" />
+      <workItem from="1638897501376" duration="1136000" />
+      <workItem from="1642115072141" duration="18000" />
+      <workItem from="1649458144370" duration="1007000" />
+      <workItem from="1649804177446" duration="218000" />
     </task>
     <servers />
   </component>

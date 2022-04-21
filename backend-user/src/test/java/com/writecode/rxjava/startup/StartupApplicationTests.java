@@ -24,8 +24,6 @@ class StartupApplicationTests {
 
     @Test
     void contextLoads() {
-        when(usuarioRepository.findAll())
-                .thenReturn(Datos.USUARIOS);
     }
 
 }
