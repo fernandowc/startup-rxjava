@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "174ced57-0d82-447b-8350-73ae7673d73f",
+		"name": "Startup RxJava",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/61273025a2056141c33317cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"61273025a2056141c33317cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario hateoas id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/hateoas/61273025a2056141c33317cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"hateoas",
+						"61273025a2056141c33317cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generar reporte usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/generarReporte/61273025a2056141c33317cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"generarReporte",
+						"61273025a2056141c33317cb"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "generar reporte usuario",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/usuarios/generarReporte/61273025a2056141c33317cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"usuarios",
+								"generarReporte",
+								"61273025a2056141c33317cb"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/octet-stream"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1605"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Apr 2022 06:02:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "%PDF-1.5\n%����\n3 0 obj\n<</Filter/FlateDecode/Length 350>>stream\nx����N�0\u0014���\u0014�r^�mi\u000b�N\u0013g�ɢ\u0006�\u0016/:(\u0013\u0003cv�C�\u0016��hp�\u0015��@\u0013z��\u000e}'�\u0019�\u0015�TAV���<\u0012\u000ew�+\u0003�˿S�!k�Ŕ\u0001���dr���Z,�\u0004>\nܒ�뤖p�98Kʞ\u0004���r\nI���}\t��\u000b#\u0000\u0017�M��u[�A\u0014�\u001ev 6������\u00112�\u0014G��D��8\n\n\u000bϛ�qU;�:�\u0000���𣁴;��Y�,\\�}922K�\u001f�{Ĭ\f<X����b<�\u0003�����hO\u001d��\u0000\u0014��zk�v�\u0011�\u001b6�`H��BNm�j|ɫ�����x?TB\u0003��?�ԃ\u0013\u001aiʴ��\u001de\u0011+�\u0002��\u0012�x����<b\u001a����ڶ<�7\u0019��\u001c�㘷�8h\f����\tM���\u001b_j\u0016��\u0007\u0011?\u0001��-,\nendstream\nendobj\n1 0 obj\n<</Tabs/S/Group<</S/Transparency/Type/Group/CS/DeviceRGB>>/Contents 3 0 R/Type/Page/Resources<</ColorSpace<</CS/DeviceRGB>>/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]/Font<</F1 2 0 R>>>>/Parent 4 0 R/MediaBox[0 0 595 842]>>\nendobj\n5 0 obj\n[1 0 R/XYZ 0 852 0]\nendobj\n2 0 obj\n<</Subtype/Type1/Type/Font/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>\nendobj\n4 0 obj\n<</Kids[1 0 R]/Type/Pages/Count 1/ITXT(2.1.7)>>\nendobj\n6 0 obj\n<</Names[(JR_PAGE_ANCHOR_0_1) 5 0 R]>>\nendobj\n7 0 obj\n<</Dests 6 0 R>>\nendobj\n8 0 obj\n<</Names 7 0 R/Type/Catalog/Pages 4 0 R/ViewerPreferences<</PrintScaling/AppDefault>>>>\nendobj\n9 0 obj\n<</ModDate(D:20220420010259-05'00')/Creator(JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd)/CreationDate(D:20220420010259-05'00')/Producer(iText 2.1.7 by 1T3XT)>>\nendobj\nxref\n0 10\n0000000000 65535 f \n0000000432 00000 n \n0000000708 00000 n \n0000000015 00000 n \n0000000796 00000 n \n0000000673 00000 n \n0000000859 00000 n \n0000000913 00000 n \n0000000945 00000 n \n0000001048 00000 n \ntrailer\n<</Info 9 0 R/ID [<d9eeba2a169c61b422d6cb2cad2be86a><a13cbb286ce64521622fe15ef81ef1aa>]/Root 8 0 R/Size 10>>\nstartxref\n1257\n%%EOF\n"
+				}
+			]
+		},
+		{
+			"name": "eliminar usuario id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/619054d6bf5b46591e57b62",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"619054d6bf5b46591e57b62"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombres\" : \"Mafe\",\r\n    \"apellidos\": \"Reyes\",\r\n    \"fechaNac\": \"2019-04-04\",\r\n    \"urlFoto\": null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar reporte",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUsuario\": \"61273025a2056141c33317cb\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/buscar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"buscar",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombres\" : \"Karina Perra\",\r\n    \"apellidos\": \"Peralta Guerrero\",\r\n    \"fechaNac\": \"2017-04-04\",\r\n    \"urlFoto\": null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/61273025a2056141c33317cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"61273025a2056141c33317cb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
